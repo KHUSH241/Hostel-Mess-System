@@ -9,15 +9,9 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * Owns the complaint lifecycle: creation, status updates, persistence, and
- * the auto-escalation rule (unresolved complaints older than ESCALATION_THRESHOLD_DAYS
- * get flagged ESCALATED whenever this check runs).
- */
 public class ComplaintService {
     private static final String COMPLAINTS_FILE = "data/complaints.txt";
 
-    /** X in "auto-escalates unresolved ones after X days". Kept configurable in one place. */
     public static final int ESCALATION_THRESHOLD_DAYS = 3;
 
     private final List<Complaint> complaints = new ArrayList<>();
@@ -101,12 +95,7 @@ public class ComplaintService {
         persistAll();
     }
 
-    /**
-     * Scans every open complaint and escalates the ones that have been
-     * unresolved for more than ESCALATION_THRESHOLD_DAYS. Called on admin
-     * dashboard load and can also be run on demand.
-     * @return number of complaints newly escalated in this pass
-     */
+
     public int runEscalationCheck() {
         LocalDateTime now = LocalDateTime.now();
         int escalatedCount = 0;
