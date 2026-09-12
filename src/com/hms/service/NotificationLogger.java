@@ -4,11 +4,6 @@ import com.hms.util.FileStorageUtil;
 
 import java.time.LocalDateTime;
 
-/**
- * Very small logging module - every escalation event is appended to
- * data/escalation.log so there's an audit trail (satisfies the "logging /
- * monitoring" non-functional requirement).
- */
 public class NotificationLogger {
     private static final String LOG_FILE = "data/escalation.log";
 
