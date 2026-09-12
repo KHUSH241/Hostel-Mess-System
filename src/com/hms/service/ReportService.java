@@ -9,10 +9,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * Turns the raw complaint list into the numbers an admin dashboard cares about:
- * counts by status/category, average resolution time, and escalation rate.
- */
 public class ReportService {
 
     public Map<ComplaintStatus, Long> countByStatus(List<Complaint> complaints) {
