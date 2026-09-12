@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalDouble;
 
-/** Collects star ratings + comments once a complaint is resolved. */
 public class FeedbackService {
     private static final String FEEDBACK_FILE = "data/feedback.txt";
 
