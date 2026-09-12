@@ -15,8 +15,6 @@ public class AuthMenu {
         this.sc = sc;
         this.authService = authService;
     }
-
-    /** Returns the logged-in user, or null if the user chose to exit. */
     public User show() {
         while (true) {
             System.out.println("\n===== Hostel & Mess Complaint System =====");
