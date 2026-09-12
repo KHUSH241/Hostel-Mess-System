@@ -8,10 +8,6 @@ import com.hms.util.InvalidInputException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Handles user registration and login. Users are persisted to data/users.txt
- * as pipe-delimited rows so accounts survive across runs.
- */
 public class AuthService {
     private static final String USERS_FILE = "data/users.txt";
 
@@ -72,7 +68,6 @@ public class AuthService {
         }
     }
 
-    /** Returns the authenticated user, or null if credentials don't match. */
     public User login(String username, String password) {
         for (User u : users) {
             if (u.getUsername().equalsIgnoreCase(username) && u.checkPassword(password)) {
