@@ -5,11 +5,7 @@ import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Thin wrapper around simple pipe-delimited text files that act as our
- * persistence layer, so we don't need an external database dependency
- * to run the project from the command line.
- */
+
 public final class FileStorageUtil {
 
     private FileStorageUtil() { }
