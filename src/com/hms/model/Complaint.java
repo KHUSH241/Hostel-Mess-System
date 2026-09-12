@@ -2,10 +2,6 @@ package com.hms.model;
 
 import java.time.LocalDateTime;
 
-/**
- * Core entity of the system. Tracks its own lifecycle timestamps so the
- * service layer can compute resolution time and decide on escalation.
- */
 public class Complaint {
     private final String complaintId;
     private final String studentId;
@@ -15,7 +11,7 @@ public class Complaint {
     private final Priority priority;
     private ComplaintStatus status;
     private final LocalDateTime createdAt;
-    private LocalDateTime resolvedAt;   // null until resolved
+    private LocalDateTime resolvedAt; 
     private boolean escalated;
     private String adminRemarks;
 
@@ -33,7 +29,6 @@ public class Complaint {
         this.adminRemarks = "";
     }
 
-    // --- Getters ---
     public String getComplaintId() { return complaintId; }
     public String getStudentId() { return studentId; }
     public String getStudentName() { return studentName; }
@@ -46,13 +41,11 @@ public class Complaint {
     public boolean isEscalated() { return escalated; }
     public String getAdminRemarks() { return adminRemarks; }
 
-    // --- Mutators used by the service layer ---
     public void setStatus(ComplaintStatus status) { this.status = status; }
     public void setResolvedAt(LocalDateTime resolvedAt) { this.resolvedAt = resolvedAt; }
     public void setEscalated(boolean escalated) { this.escalated = escalated; }
     public void setAdminRemarks(String adminRemarks) { this.adminRemarks = adminRemarks; }
 
-    /** Days the complaint has been open (resolved complaints stop counting). */
     public long daysOpen(LocalDateTime now) {
         LocalDateTime end = (resolvedAt != null) ? resolvedAt : now;
         return java.time.Duration.between(createdAt, end).toDays();
