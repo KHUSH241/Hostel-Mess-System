@@ -2,7 +2,6 @@ package com.hms.util;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/** Generates short, human-readable sequential IDs per entity type, e.g. CMP-0007. */
 public final class IdGenerator {
     private final String prefix;
     private final AtomicInteger counter;
