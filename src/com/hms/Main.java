@@ -10,10 +10,6 @@ import com.hms.ui.StudentMenu;
 
 import java.util.Scanner;
 
-/**
- * Hostel & Mess Complaint and Feedback System
- * Entry point - wires up the service layer and runs the console loop.
- */
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
