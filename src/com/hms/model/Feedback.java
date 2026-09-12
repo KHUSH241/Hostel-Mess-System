@@ -1,14 +1,10 @@
 package com.hms.model;
 
 import java.time.LocalDateTime;
-
-/**
- * Feedback a student leaves once their complaint is marked RESOLVED.
- */
 public class Feedback {
     private final String feedbackId;
     private final String complaintId;
-    private final int rating; // 1-5
+    private final int rating; 
     private final String comment;
     private final LocalDateTime submittedAt;
 
